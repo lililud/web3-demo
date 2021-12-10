@@ -1,0 +1,11 @@
+{
+  "name": "web3-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lililud/web3-demo.git",
+  "author": "lilian <lilian.ludford@onepeloton.com>",
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "^4.4.0"
+  }
+}
