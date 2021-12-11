@@ -6,6 +6,7 @@
   "author": "lilian <lilian.ludford@onepeloton.com>",
   "license": "MIT",
   "dependencies": {
-    "openzeppelin-solidity": "^4.4.0"
+    "openzeppelin-solidity": "^4.4.0",
+    "react-moralis": "^0.3.1"
   }
 }
