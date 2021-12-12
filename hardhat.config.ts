@@ -1,6 +1,10 @@
-require("@nomiclabs/hardhat-waffle");
-require("@nomiclabs/hardhat-etherscan");
+import "@nomiclabs/hardhat-waffle";
+import "@nomiclabs/hardhat-ethers";
+
+import "@nomiclabs/hardhat-etherscan";
 require('dotenv').config();
+import { task } from "hardhat/config";
+
 
 
 /**

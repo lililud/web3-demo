@@ -35,7 +35,7 @@ contract FeatureToggle is AccessControl, Ownable {
             name: name,
             toggleId: toggleId,
             isEnabled: isEnabled
-        });
+            });
     }
 
     function getIsEnabled(uint256 toggleId) public view onlyOwner() returns (bool){
