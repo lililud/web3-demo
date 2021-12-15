@@ -11,7 +11,7 @@ import { task } from "hardhat/config";
  * @type import('hardhat/config').HardhatUserConfig
  */
 
-const privateKey = process.env.PRIVATE_KEY
+const privateKey = process.env.SUPER_PRIVATE_KEY
 const accounts = {accounts: [`0x${privateKey}`]}
 task("balance", "Prints an account's balance")
   .addParam("account", "The account's address")

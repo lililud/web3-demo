@@ -1,7 +1,8 @@
-import { ethers } from "hardhat";
-
+import { ethers } from 'hardhat';
+import {updateFrontEndABI} from './updateFrontEndABI';
 require('dotenv').config();
-const ADDY = process.env.TEST_WALLET_ADDRESS;
+
+const ADDY = process.env.WALLET_ADDY;
 async function main() {
     const FeatureToggle = await ethers.getContractFactory("FeatureToggle");
     console.log('test wallet addy', ADDY);
@@ -12,6 +13,7 @@ async function main() {
 }
 
 main()
+.then((deployedContractAddress) => updateFrontEndABI(deployedContractAddress))
 .then(() => process.exit(0))
 .catch(
     (error) => {
