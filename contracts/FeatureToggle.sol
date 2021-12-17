@@ -25,6 +25,8 @@ contract FeatureToggle is AccessControl, Ownable {
         for (uint256 i = 0; i < permissionedUsers.length; ++i) {
             _setupRole(UPDATE_TOGGLE_ROLE, permissionedUsers[i]);
         }
+        // giving wallet that deployed contract with permissions
+        _setupRole(UPDATE_TOGGLE_ROLE, msg.sender);
     }
 
     function updateToggle(uint256 toggleId, bool isEnabled, string memory name) public {
@@ -38,8 +40,9 @@ contract FeatureToggle is AccessControl, Ownable {
             });
     }
 
-    function getIsEnabled(uint256 toggleId) public view onlyOwner() returns (bool){
-        // only owner of contract can view
+    function getIsEnabled(uint256 toggleId) public view returns (bool){
+        // only permissioned wallets can view
+        require(hasRole(UPDATE_TOGGLE_ROLE, msg.sender), "Caller is not permissioned to view toggle");
         return toggleIdToToggle[toggleId].isEnabled;
     }
 }
